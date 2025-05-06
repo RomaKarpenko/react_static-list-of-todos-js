@@ -1,12 +1,13 @@
 import { UserInfo } from '../UserInfo/UserInfo';
 
 export const TodoInfo = ({ todo }) => {
+  const {completed, user, title} = todo;
   return (
   <article
-    className={`TodoInfo ${todo.completed ? 'TodoInfo--completed' : ''}`}
+    className={`TodoInfo ${completed ? 'TodoInfo--completed' : ''}`}
   >
-    <h2 className="TodoInfo__title">{todo.title}</h2>
+    <h2 className="TodoInfo__title">{title}</h2>
 
-    <UserInfo user={todo.user} />
+    <UserInfo user={user} />
   </article>
 )};
